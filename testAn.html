@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Use AngularJS</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #main {
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-controller="DemoController">
+    <div id="main">
+        <input type="text" id="value" ng-model="value" />
+        <input type="button" value="*2" id="btn" ng-click="doCalc()" />
+    </div>
+    <script type="text/javascript" src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript">
+        (function (window) {
+            // 1.模块
+            var myApp = window.angular.module('myApp', []);
+            // 2.控制器
+            myApp.controller('DemoController', function ($scope) {
+                $scope.value = 10;
+                $scope.doCalc = function () {
+                    $scope.value = $scope.value * 2;
+                };
+            });
+        })(window);
+    </script>
+</body>
+</html>
